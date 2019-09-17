@@ -58,28 +58,70 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
+
+runners.forEach(function(name){
+  return fullNames.push(`${name.first_name} ${name.last_name}`);
+})
+
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
+
+firstNamesAllCaps = runners.map(names => names.first_name.toUpperCase());
+
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+
+runnersLargeSizeShirt = runners.filter(function(size){
+  return size.shirt_size ==='L';
+})
+
+
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
+
+ticketPriceTotal = runners.reduce(function(accumulator, item){
+
+  return accumulator + item.donation;
+}, 0);
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+let runnersSmallSizeShirt = [];
+
+runnersSmallSizeShirt = runners.filter(function(size){
+  return size.shirt_size ==='S';
+})
+
+console.log('small shirt size')
+console.log(runnersSmallSizeShirt);
 
 // Problem 2
+let idnumbers = [];
+runners.forEach(function(idnum){
+  return idnumbers.push(`${idnum.id} `);
+})
+console.log(idnumbers);
+
 
 // Problem 3
+
+let lastNamesAllCaps = [];
+
+lastNamesAllCaps = runners.map(names => names.last_name.toUpperCase());
+
+console.log(lastNamesAllCaps);
+lastNamesAllCaps.sort();
+console.log(lastNamesAllCaps);
