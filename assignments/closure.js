@@ -3,12 +3,19 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
-let thing = 'this a thing';
 
-function getThing(){
-  return thing = 'got the thing';
+
+function hereIsAThing(){
+  let thing ='I am a thing'
+
+  function getThing(){
+   console.log('got the thing');
+  } 
+  getThing();
 }
-console.log(getThing());
+
+hereIsAThing();
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 2: Implement a "counter maker" function ====
